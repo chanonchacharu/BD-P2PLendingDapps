@@ -1,1 +1,606 @@
-/* Styles go here */
+/* Define gradient colors */
+:root {
+  --color-white: #ffffff;
+  --color-light-blue: #b6b9fd;
+  --color-medium-blue: #424769;
+  --color-dark-blue: #2d2950;
+  --color-accent: #f9b17a; /* This color seems to be an accent color */
+  
+  --gradient-background: linear-gradient(to right, #315f44, #336cd5);
+  --border-color: var(--color-medium-blue);
+  --button-color: var(--color-dark-blue);
+  --button-hover-color: var(--color-accent);
+  --input-focus-border: var(--color-accent);
+  --error-color: #e63946; /* A red shade for errors */
+  --success-color: #2a9d8f; /* A teal shade for success */
+}
+
+.account-info {
+  font-size: larger;
+  color: white;
+}
+
+.custom-navbar {
+  height: 60px; /* or any height you prefer */
+  /* other styles to increase navbar size */
+}
+
+.custom-brand {
+  font-size: 24px; /* or the size you prefer */
+  padding-left: 10px;
+  /* other styles for the brand text */
+}
+
+.account-info {
+  font-size: larger; /* existing style */
+}
+
+body, html {
+height: 100%;
+  margin: 0;
+  font-family:cursive;
+  color: #fff;
+  background: linear-gradient(to bottom right, #FAA2AE, #A7BEB6);
+  background-attachment: fixed; /* Fix the gradient background */
+  position: left; /* Needed for absolute positioning of the image container */
+}
+
+
+/* Styling for expected-repayments & Borrowing Contracts title */
+.expected-repayments {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  border-radius: 8px;
+  padding: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}
+/* Styling for Total & Potential & Amounts */
+.total-container {
+  background-color: var(--color-white);
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: 250;
+  font-size:medium;
+}
+
+.potential-container {
+  background-color: var(--color-white);
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-weight: 250;
+  font-size:medium;
+}
+
+
+/* Styling for contract containers */
+.contract-container {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contract-title {
+  font-weight: bold;
+  color: var(--color-dark-blue);
+}
+
+/* Styling for collateral details within contract containers */
+.collateral-container {
+  background-color: #110101;
+  border: 3px solid #fff;
+  border-radius: 6px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+/* Repayment section styling */
+.repay-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.repay-section input {
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+/* Button styles for repayment and form submission */
+button {
+  background-image: var(--gradient-background);
+  color: var(--color-white);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Borrowing Contract Form Styling */
+.form-container {
+  background: #2d2950;
+  backdrop-filter: blur(50px);
+  box-shadow:0 0 10px rgba(0, 0, 0, .6);
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 5px solid var(--border-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.);
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+/* Input field styling */
+.form-container input[type='text'],
+.form-container input[type='number'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  color: var(--color-dark-blue);
+  background-color: var(--color-white);
+  box-sizing: border-box;
+}
+
+/* Input field focus styling */
+.form-container input[type='text']:focus,
+.form-container input[type='number']:focus {
+  outline: none;
+  border-color: var(--input-focus-border);
+  box-shadow: 0 0 0 0.2rem rgba(249, 177, 122, 0.25);
+}
+
+/* Button styling for create lending contract */
+button.create-lending-contract {
+  background-image: var(--gradient-background);
+  color: var(--color-white);
+  padding: 7px 13px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  outline: none; /* Removes the outline on focus for browsers like Firefox */
+}
+
+
+
+/*NEW: Royalty Theme*/
+:root {
+  --color-royal-blue: #0D1A47; /* Royal blue for grand and trustworthy feel */
+  --color-gold: #D4AF37; /* Gold color for accents and to invoke a sense of royalty */
+  --text-color: #E6E6E6; /* Light grey text for readability on dark backgrounds */
+  --text-color-dark: #333333; /* Dark text for readability on light backgrounds */
+}
+
+/*Data Visualizaiton ZapZap Team Code*/
+body, html {
+  height: 100%;
+    margin: 0;
+    font-family:cursive;
+    color: #fff;
+    background: linear-gradient(to bottom right, #FAA2AE, #8998c9);
+    background-attachment: fixed; /* Fix the gradient background */
+    position: left; /* Needed for absolute positioning of the image container */
+  }
+
+/*END OF CURRENT CSS FEATURES*/
+  
+
+.contract-container {
+  background-color: var(--color-dark-blue);
+  border: 2px solid var(--color-gold);
+  color: var(--text-color);
+}
+
+.contract-title {
+  color: var(--color-gold);
+}
+
+.form-container {
+  background-color: var(--color-royal-blue);
+}
+
+.form-container label,
+.form-container input[type='text'],
+.form-container input[type='number'],
+button {
+  color: var(--text-color);
+}
+
+.form-container input[type='text'],
+.form-container input[type='number'] {
+  background-color: var(--color-white);
+}
+
+.borrowing-contract-form input[type="text"] {
+  color: black;
+}
+
+.form-field-container input[type="text"] {
+  color: black !important; /* Forces text to be black */
+}
+
+/* Button hover effect to add a royal touch */
+button:hover {
+  background-color: var(--color-gold);
+  color: var(--color-royal-blue);
+}
+
+/* Button styles for repayment and form submission */
+button {
+  background-image: linear-gradient(to bottom right, #FAA2AE, #A7BEB6);
+  color: var(--color-white);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*Crest at the top of the Borrowing Contract - indicate Status*/
+.borrowing-contract-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the children horizontally in the container */
+  justify-content: center; /* This centers the children vertically in the container */
+  text-align: center; /* This centers the text inside the children */
+}
+
+.contract-image-container {
+  justify-content: center;
+  margin-bottom: 20px; 
+}
+
+.loan-status-image {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  border-radius: 50%; /* This makes the image round */
+  border: 3px solid #fff; /* This creates a white border, adjust color as needed */
+  box-shadow: 0px 0px 10px #000; /* Optional: Adds a shadow for depth */
+}
+
+.loan-status-text {
+  color: #ee78e2; /* Gold color for the text to stand out */
+  font-size: 1.5em; /* Larger text size */
+  font-weight: bold; /* Bold text */
+  margin-top: 10px; /* Space between the image and the text */
+  display: block; /* Ensure it's on a new line below the image */
+}
+/*END OF CURRENT FEATURE CSS*/
+
+
+/* NEW CSS FOTR THE REPAYMENT PAGE*/
+/* Ensure all content is within the viewport width */
+.expected-repayments-page,
+.column-left,
+.column-right {
+  box-sizing: border-box;
+}
+
+/* Update column layout for more spacing and better responsiveness */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Add space between columns */
+}
+
+.column-left,
+.column-right {
+  flex: 0 0 calc(50% - 20px); /* Subtract gap from 50% width for each column */
+  max-width: calc(50% - 20px); /* Ensure max width respects the gap */
+}
+
+/* Style adjustments for smaller screens */
+@media (max-width: 768px) {
+  .column-left,
+  .column-right {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Wallet address styling for better emphasis */
+.expected-repayments-page p {
+  background-color: var(--color-gold);
+  color: var(--color-royal-blue);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block; /* Make the wallet address container inline for centering */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Title styling for a grand look */
+.expected-repayments-page h1 {
+  color: var(--color-gold);
+  text-align: center;
+  font-size: 2em; /* Larger font size for main title */
+  margin-bottom: 0.5em;
+}
+
+/* Improve content-container for better visibility and spacing */
+.content-container {
+  overflow: hidden; /* Hide overflowing content */
+  word-wrap: break-word; /* Ensure long words do not cause overflow */
+  padding: 20px;
+  font-size: 1em;
+  line-height: 1.5; /* Improve line spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Softer shadow for a subtle depth effect */
+}
+
+/* Detail container adjustments */
+.contract-detail-container {
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+/* Repayment and collateral claim button adjustments */
+.contract-detail-container button {
+  width: 100%; /* Make the button full width */
+  text-align: center;
+  padding: 15px;
+  font-size: 1em;
+}
+
+/* Amounts owed container adjustments */
+.amounts-owed-container {
+  overflow: hidden;
+  word-wrap: break-word;
+  padding: 20px;
+}
+
+/* General container and text adjustments for consistency */
+.expected-repayments-page .section-title,
+.expected-repayments-page .contract-detail-container,
+.expected-repayments-page .amounts-owed-container {
+  margin: 15px 0;
+  text-align: left; /* Align text to the left for consistency */
+}
+
+/*Trying to split the main page into two sections*/
+/* Main page styles */
+.contracts-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Add some space between the columns */
+}
+
+.column {
+  flex: 1; /* Both columns will share the available space equally */
+  min-width: 0; /* To ensure they don't overflow their container */
+}
+
+.lending-column, .borrowing-column {
+  background-color: var(--color-medium-blue); /* Use the theme's medium blue */
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .contracts-container {
+    flex-direction: column;
+  }
+
+  .lending-column, .borrowing-column {
+    /* Full width on small screens */
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+/*For input field*/
+/* Input field styling */
+input[type='number'] {
+  width: 50%; /* Full width */
+  padding: 10px; /* Add some padding inside the input */
+  margin-bottom: 15px; /* Space after the input */
+  border-radius: 4px; /* Rounded borders */
+  border: 1px solid var(--border-color); /* Use the theme's border color */
+  background-color: var(--color-white); /* White background */
+  color: var(--text-color-dark); /* Text color */
+  font-size: 1em; /* Font size */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+input[type='number']:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: var(--color-accent); /* Highlight with accent color on focus */
+  box-shadow: 0 0 0 0.2rem rgba(249, 177, 122, 0.25); /* Subtle glow on focus */
+}
+
+
+/* Center the view-summary-button at the bottom of the page */
+.view-summary-button {
+  display: block; /* Make the button a block element to occupy its own line */
+  width: max-content; /* Set the width to the content size */
+  margin: 20px auto; /* Center the button with automatic horizontal margins */
+  padding: 10px 20px; /* Add some padding inside the button */
+  background-color: var(--color-gold); /* Use the theme's accent color */
+  color: var(--color-royal-blue); /* Use a color that contrasts well with the background */
+  border: none; /* Remove the default border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Change the cursor to a pointer to indicate it's clickable */
+  font-weight: bold; /* Make the text bold */
+  text-align: center; /* Center the text inside the button */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.view-summary-button:hover {
+  background-color: var(--button-hover-color); /* Change background color on hover */
+}
+button:disabled {
+  background-color: #ccc; /* Gray color to indicate disabled state */
+  cursor: not-allowed; /* Change cursor to indicate the button is not clickable */
+  opacity: 0.5; /* Optional: reduce opacity to indicate disabled state */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the button */
+  align-items: center; /* Vertically center the button if needed */
+  padding: 10px; /* Add padding as needed */
+}
+
+
+/*--------------------------------------------------------------------------------*/
+/*New IMPLEMENTATION OF THE SECOND PAGE*/
+/* Base page styles */
+.expected-repayments-page {
+  background: var(--color-royal-blue);
+  color: var(--text-color);
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px auto;
+  max-width: 1200px; /* Increased width for a grander presentation */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Column layout with blue theme */
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Increase gap for a more spacious layout */
+}
+
+.column-left,
+.column-right {
+  flex: 1;
+  background: var(--color-medium-blue); /* Medium blue for column backgrounds */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .column-left,
+  .column-right {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Wallet address and title styling */
+.expected-repayments-page h1,
+.expected-repayments-page p {
+  color: var(--color-gold);
+  font-weight: bold;
+}
+
+.expected-repayments-page p {
+  background: none;
+  padding: 0;
+}
+
+/* Content container with clear visibility */
+.content-container {
+  background-color: var(--color-white);
+  color: var(--text-color-dark); /* Dark text for readability */
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Detail container adjustments for a luxurious look */
+.contract-detail-container {
+  background-color: #301e4b; /* Dark purple for a rich, royal background */
+  color: #b19b68; /* Goldish color for the text, enhancing the royal theme */
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  overflow: hidden;
+  word-break: break-word;
+}
+
+
+/* Button styling for actions */
+.contract-detail-container button {
+  background-color: var(--color-gold);
+  color: var(--color-royal-blue);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.wallet-address,
+.amount-owed {
+  color: #ffffff; /* Ensuring these specific elements are white */
+}
+
+.contract-detail-container button:hover {
+  background-color: var(--button-hover-color);
+}
+
+/* Amounts owed container for a refined look */
+.amounts-owed-container {
+  background-color: #000000;
+  color: var(--text-color-dark);
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Back button styling for elegance */
+.back-button {
+  background-color: var(--color-gold);
+  color: var(--color-royal-blue);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  width: fit-content;
+  margin: 30px auto;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--button-hover-color);
+}
+
